@@ -30,4 +30,4 @@ Después de un cambio, revisa ambos temas a 320, 375, 768 y 1440 px dentro de un
 
 Revisa también los archivos no utilizados, textos alternativos y metadatos de imágenes. El contenido versionado debe coincidir con lo que se quiere mostrar públicamente. Prepara el commit con rutas explícitas y comprueba el diff.
 
-La comprobación final de rutas, proxy de imágenes y cambios manuales de tema se realiza en GitHub después de publicar con autorización.
+Después de cada actualización publicada, comprueba de nuevo las rutas, la entrega de las imágenes y el aspecto del perfil real en GitHub.

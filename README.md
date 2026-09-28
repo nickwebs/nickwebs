@@ -7,7 +7,7 @@
 
 # Izan
 
-Desarrollo web con claridad y cuidado.
+Desarrollo web: claridad y cuidado.
 
 <p>
 <picture><img src="assets/icons/html.svg" width="22" height="22" alt=""></picture>&nbsp;HTML &nbsp;

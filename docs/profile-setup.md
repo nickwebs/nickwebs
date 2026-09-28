@@ -1,6 +1,8 @@
-# Configuración y publicación
+# Configuración y actualizaciones
 
-El README muestra una identidad personal breve. El nombre visible, la bio, la web y los pins se gestionan fuera del archivo. Esta entrega no modifica la cuenta ni los repositorios fijados.
+El README está publicado en el [perfil de nickwebs](https://github.com/nickwebs). Los archivos se mantienen en el [repositorio nickwebs/nickwebs](https://github.com/nickwebs/nickwebs), en la rama main.
+
+El nombre visible, la bio, la web y los pins se gestionan fuera del archivo. La publicación del README no modifica esos campos ni los repositorios fijados.
 
 ## Propuesta de campos
 
@@ -10,26 +12,28 @@ El README muestra una identidad personal breve. El nombre visible, la bio, la we
 
 La bio tiene menos de 160 caracteres, el límite actual documentado por GitHub. No se propone añadir datos de contacto ni otra información personal.
 
-## Publicar
+## Actualizar el perfil
 
-GitHub muestra el README de perfil cuando existe un repositorio público con el mismo nombre que el usuario y un README.md no vacío en su raíz. Para esta cuenta, el destino es **nickwebs/nickwebs**.
+GitHub muestra el README.md de la raíz porque el repositorio es público y tiene el mismo nombre que el usuario. Mantén esa estructura y conserva los recursos en assets/.
 
-1. Comprueba si el repositorio remoto existe. No se encontró durante la preparación local; ese estado puede cambiar.
-2. Si no existe, créalo como público, llamado nickwebs, sin archivos iniciales que generen una historia distinta.
-3. Desde la carpeta local nickwebs, revisa el estado Git, la rama y los remotos. Después de autorizar la publicación, añade origin con el destino correspondiente y sube la rama main.
+1. Edita los textos o recursos necesarios, siguiendo maintenance.md.
+2. Revisa el diff y las variantes visuales. Añade al commit únicamente las rutas modificadas; el ejemplo siguiente corresponde a un cambio de texto en README.md.
+3. Publica el commit en main cuando la actualización esté lista.
 
 ```sh
-git status
-git branch --show-current
-git remote -v
-git remote add origin https://github.com/nickwebs/nickwebs.git
-git push -u origin main
+git status --short
+git diff --check
+git diff
+git add -- README.md
+git diff --cached
+git commit -m "Update profile introduction"
+git push origin main
 ```
 
-Si el remoto ya contiene trabajo, consérvalo: clónalo y compara antes de trasladar archivos. No uses force push ni reemplaces la historia existente.
+Si otra copia ha publicado cambios, recupéralos y compáralos antes de integrar tu actualización. No uses force push ni reemplaces la historia existente.
 
-4. Revisa el perfil real en GitHub: carga de imágenes, temas claro y oscuro, selección de la cabecera móvil, enlace a la web y ausencia de desbordamiento en 320, 375, 768 y 1440 px.
+4. Revisa el perfil real: carga de imágenes, temas claro y oscuro, selección de la cabecera móvil, enlace a la web y ausencia de desbordamiento en 320, 375, 768 y 1440 px.
 
-La previsualización local es una aproximación. La API de Markdown comprueba el HTML saneado, pero no verifica todos los filtros finales de rutas ni el proxy de imágenes del perfil publicado.
+Una previsualización local es una aproximación. La comprobación en el perfil publicado permite verificar también las rutas y la entrega real de las imágenes.
 
 [Documentación de los README de perfil](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme)
